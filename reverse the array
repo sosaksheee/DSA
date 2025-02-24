@@ -1,0 +1,9 @@
+def reverse(l):
+    i=len(l)-1
+    r=[]
+    while i>=0:
+        r.append(l[i])
+        i-=1
+    return r
+a=reverse([1,2,3,4,5])
+print(a)
