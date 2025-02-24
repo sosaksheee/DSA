@@ -1,0 +1,9 @@
+class Solution:
+    def containsDuplicate(self, nums: list[int]) -> bool:
+        for i in range(len(nums)):
+            n=nums[i]
+            if (n in nums[i+1:]):
+                return True
+        return False
+s=Solution()
+s.containsDuplicate([1,2,3,1])
