@@ -1,0 +1,11 @@
+class Solution:
+    def getConcatenation(self, nums: list[int]) -> list[int]:
+        for i in range(len(nums)):
+            nums.append(nums[i])
+"""      l=nums.copy()
+        nums+=l   """
+        return nums
+
+s=Solution()
+l=s.getConcatenation([1,2,3])
+print(l)
