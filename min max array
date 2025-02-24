@@ -1,0 +1,26 @@
+def find_min_max(arr: list[int]) -> tuple[int, int]:
+    n = len(arr)
+    
+    if n == 1:
+        return arr[0], arr[0] 
+    
+    # Initialize min and max
+    if arr[0] < arr[1]:
+        min_val, max_val = arr[0], arr[1]
+    else:
+        min_val, max_val = arr[1], arr[0]
+    
+    # Compare in pairs
+    for i in range(2, n, 2):
+        if i + 1 < n:
+            if arr[i] < arr[i + 1]:
+                min_val = min(min_val, arr[i])
+                max_val = max(max_val, arr[i + 1])
+            else:
+                min_val = min(min_val, arr[i + 1])
+                max_val = max(max_val, arr[i])
+        else:
+            min_val = min(min_val, arr[i])
+            max_val = max(max_val, arr[i])
+    
+    return min_val, max_val
